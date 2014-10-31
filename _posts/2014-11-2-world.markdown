@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "习近平将与奥巴马谈反恐合作"
+date:   2014-11-02 13:07:32
+categories: jekyll update
+---
+
+<h1 style="color:red">hello</h1>
