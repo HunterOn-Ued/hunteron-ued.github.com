@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "习近平将与奥巴马谈反恐合作"
+date:   2014-11-02 13:07:32
+categories: jekyll update
+---
+
+## nodejs继承之--emit
+
+{% highlight javascript %}
+var os              = require('os'), 
+    numeral         = require('numeral'),
+    util            = require('util'),
+    os              = require('os'),
+    prettySeconds   = require('pretty-seconds'),
+    EventEmitter    = require('events').EventEmitter;
+
+
+
+var Ticker = function() {
+    var self = this;
+    setInterval(function() {
+        var total = os.totalmem(), free = os.freemem(), percent = free / total;
+
+        var time = new Date(),
+            year = time.getFullYear(),
+            month= time.getMonth() + 1,
+            day  = time.getDate(),
+            hour = time.getHours(),
+            min  = time.getMinutes(),
+            sec  = time.getSeconds(),
+            time = year + ':' + month + ':' + day + ' ' + hour + ':' + min + ':' + sec;
+
+
+        self.emit('free', numeral( free ).format('0.00 b'), time);
+    }, 2000);
+};
+
+
+
+util.inherits(Ticker, EventEmitter);
+
+var ticker = new Ticker();
+ticker.on('free', function(free, time) {
+    console.log('=================== 时间:' + time + ' =====================\n')
+    console.log('                     剩余内存:' + free + '\n');
+    console.log('=================================================================\n\n\n')
+
+});
+
+
+{% endhighlight %}
