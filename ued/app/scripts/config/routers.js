@@ -29,7 +29,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '/front',
             views: {
                 'front@': {
-                    templateUrl: '/views/front.html',
+                    templateUrl: 'views/front.html',
                     controller: ['app', function(app){
                         app.$rootScope.area = app.AREA_FRONT;
                     }]
@@ -42,7 +42,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/login',
             views: {
                 '@f': {
-                    templateUrl: '/views/front/login.html',
+                    templateUrl: 'views/front/login.html',
                     controller: 'FrontLoginCtrl as login'
                 }
             }
@@ -53,7 +53,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/resume',
             views: {
                 '@f': {
-                    templateUrl: '/views/front/resume.html',
+                    templateUrl: 'views/front/resume.html',
                     controller: 'FrontResumeCtrl as resume'
                 }
             }
@@ -65,7 +65,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             views: {
                 '@f': {
                     templateUrl: function(stateParam){
-                        return '/views/front/search.html';
+                        return 'views/front/search.html';
                     },
                     controller: 'FrontSearchCtrl as search'
                 }
@@ -82,7 +82,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/backend',
             views: {
                 'backend@': {
-                    templateUrl: '/views/backend.html',
+                    templateUrl: 'views/backend.html',
                     controller: ['app', function(app){
                         app.$rootScope.area = app.AREA_BACKEND;
                     }]
@@ -99,7 +99,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/backend/main',
             views: {
                 'main@b': {
-                    templateUrl: '/views/backend/layout.html',
+                    templateUrl: 'views/backend/layout.html',
                     controller: ['app', function(app){
                         app.$rootScope.layout = app.LAYOUT_DOUBLE;
                     }]
@@ -112,11 +112,11 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/candidate',
             views: {
                 'list@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.list.html',
+                    templateUrl: 'views/backend/candidate/candidate.list.html',
                     controller: 'CandidateListCtrl as cdds'
                 },
                 'detail@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.default.html'
+                    templateUrl: 'views/backend/candidate/candidate.default.html'
                 }
             }
         })
@@ -126,7 +126,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/candidate/:id',
             views: {
                 'detail@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.detail.html',
+                    templateUrl: 'views/backend/candidate/candidate.detail.html',
                     controller: 'CandidateDetailCtrl as cdd'
                 }
             }
@@ -137,7 +137,7 @@ angular.module('bfdf.config.routers', ['ui.router'])
             url: '^/candidate/{id}/{layout}',
             views: {
                 'main@b': {
-                    templateUrl: '/views/backend/candidate/candidate.detail.html',
+                    templateUrl: 'views/backend/candidate/candidate.detail.html',
                     controller: 'CandidateDetailCtrl as cdd'
                 }
             }
