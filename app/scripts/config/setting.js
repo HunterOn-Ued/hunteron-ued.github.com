@@ -15,6 +15,15 @@
     .run(['app', function (app) {
             app.$_Candidate = app.$injector.get("$_Candidate");
 
+            app._uri = function(url, type){
+                switch(type){
+                    case 'bahavior':
+                        return 'bahavior' + url;
+                    default:
+                        var uri = location.pathname;
+                        return uri + url;
+                }
+            };
      }]);
 
 
