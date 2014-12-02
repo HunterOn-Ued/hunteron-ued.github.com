@@ -10,11 +10,9 @@
      * Created by mizi on 2014/11/11.
      */
 
-    angular.module('bfdf.config.setting', [])
+    angular.module('blog.config.setting', [])
 
     .run(['app', function (app) {
-            app.$_Candidate = app.$injector.get("$_Candidate");
-
             app._uri = function(url, type){
                 switch(type){
                     case 'bahavior':

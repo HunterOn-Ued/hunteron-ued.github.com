@@ -1,9 +1,11 @@
+(function(window, angular, undefined){
+
 'use strict';
 
 /**
  * router 使用 angular-ui-router
  */
-angular.module('bfdf.config.routers', ['ui.router'])
+angular.module('blog.config.routers', ['ui.router'])
 
 .run(['app', '$state', '$stateParams',
     function (app, $state, $stateParams) {
@@ -15,74 +17,23 @@ angular.module('bfdf.config.routers', ['ui.router'])
 .config(['app', '$stateProvider', '$urlRouterProvider',
     function(app, $stateProvider, $urlRouterProvider){
 
-        $urlRouterProvider.when("", "/login")
-            .when("/", "/login")
-            .otherwise('/404');
+        $urlRouterProvider.when('', '/ued')
+            .when('/', '/ued')
+            .otherwise('/ued');
 
         $stateProvider
-        /**
-         * front display
-         * front alias f
-         * 前台展示页
-         */
-        .state('f', {
-            url: '/front',
-            views: {
-                'front@': {
-                    templateUrl: '/views/front.html',
-                    controller: ['app', function(app){
-                        app.$rootScope.area = app.AREA_FRONT;
-                    }]
-                }
-            }
-        })
-
-        //front -> login 登录页
-        .state('f.login',{
-            url: '^/login',
-            views: {
-                '@f': {
-                    templateUrl: '/views/front/login.html',
-                    controller: 'FrontLoginCtrl as login'
-                }
-            }
-        })
-
-        // front -> resume
-        .state('f.resume',{
-            url: '^/resume',
-            views: {
-                '@f': {
-                    templateUrl: '/views/front/resume.html',
-                    controller: 'FrontResumeCtrl as resume'
-                }
-            }
-        })
-
-        // front -> search
-        .state('f.search',{
-            url: '^/search',
-            views: {
-                '@f': {
-                    templateUrl: function(stateParam){
-                        return '/views/front/search.html';
-                    },
-                    controller: 'FrontSearchCtrl as search'
-                }
-            }
-        })
 
         /**
-         * back-end management
-         * backend alias b
-         * 后端管理页
-         */
+        * back-end management
+        * backend alias b
+        * 后端管理页
+        */
 
         .state('b', {
             url: '^/backend',
             views: {
                 'backend@': {
-                    templateUrl: '/views/backend.html',
+                    templateUrl: 'views/backend.html',
                     controller: ['app', function(app){
                         app.$rootScope.area = app.AREA_BACKEND;
                     }]
@@ -91,15 +42,15 @@ angular.module('bfdf.config.routers', ['ui.router'])
         })
 
         /**
-         * layout 1-1-1
-         * backend.main alias b.m
-         * 左中右三列布局模式
-         */
+        * layout 1-1-1
+        * backend.main alias b.m
+        * 左中右三列布局模式
+        */
         .state('b.m', {
             url: '^/backend/main',
             views: {
                 'main@b': {
-                    templateUrl: '/views/backend/layout.html',
+                    templateUrl: 'views/backend/layout.html',
                     controller: ['app', function(app){
                         app.$rootScope.layout = app.LAYOUT_DOUBLE;
                     }]
@@ -107,40 +58,23 @@ angular.module('bfdf.config.routers', ['ui.router'])
             }
         })
 
-        //候选人页
-        .state('b.m.candidate',{
-            url: '^/candidate',
+        .state('b.m.ued', {
+            url: '^/ued',
             views: {
                 'list@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.list.html',
-                    controller: 'CandidateListCtrl as cdds'
+                    templateUrl: 'views/backend/ued/ued.list.html',
+                    controller: 'UedCtrl as ueds'
                 },
                 'detail@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.default.html'
+                    templateUrl: 'views/backend/ued/ued.detail.default.html',
+                    controller: 'UedDetailDefaultCtrl as abc'
                 }
             }
         })
 
-        // 查看候选人detail
-        .state('b.m.candidate.detail',{
-            url: '^/candidate/:id',
-            views: {
-                'detail@b.m': {
-                    templateUrl: '/views/backend/candidate/candidate.detail.html',
-                    controller: 'CandidateDetailCtrl as cdd'
-                }
-            }
-        })
-
-        // 查看候选人detail 单页显示
-        .state('b.m.candidate.detail.single',{
-            url: '^/candidate/{id}/{layout}',
-            views: {
-                'main@b': {
-                    templateUrl: '/views/backend/candidate/candidate.detail.html',
-                    controller: 'CandidateDetailCtrl as cdd'
-                }
-            }
-        });
     }
 ]);
+
+})(window, angular);
+
+

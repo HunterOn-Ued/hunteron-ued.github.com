@@ -27,16 +27,13 @@ html {
     #backend #wrapper .backend.view {
       height: 100%; }
       #backend #wrapper .backend.view > .content {
-        height: 100%;
-        width: 100%; }
+        height: 100%; }
   #backend header {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 999;
     width: 100%;
-    min-width: 1240px;
     height: 42px;
     background: rgba(21, 21, 21, 0.8);
     /** hack ie8 */
@@ -89,7 +86,6 @@ html {
     position: absolute;
     top: 0;
     left: calc(64px + 576px);
-    right: 0;
     z-index: 10;
     box-sizing: border-box;
     overflow-y: scroll;
@@ -139,7 +135,7 @@ html {
     padding: 2px; }
     #backend .list.content dd {
       margin: 2px;
-      padding: 5px 8px;
+      padding: 8px 10px;
       background: rgba(255, 255, 255, 0.05);
       /** ie8 hack */
       background: #2c2c2c \9; }
@@ -151,17 +147,16 @@ html {
         display: flex; }
         #backend .list.content dd ul li {
           display: inline-block; }
-  #backend .candidate.list .cols-1 {
-    flex: 3;
-    /** ie8 hack */
-    width: 30% \9; }
-  #backend .candidate.list .cols-2 {
-    flex: 5;
-    /** ie8 hack */
-    width: 55% \9; }
-  #backend .candidate.list .cols-3 {
-    flex: 1; }
-  #backend .detail.candidate {
+          #backend .list.content dd ul li > div {
+            margin-top: 3px; }
+            #backend .list.content dd ul li > div:first-child {
+              margin-top: 0; }
+          #backend .list.content dd ul li.avatar {
+            padding-left: 5px;
+            width: 48px; }
+            #backend .list.content dd ul li.avatar img {
+              border-radius: 8px; }
+  #backend .detail {
     padding: 10px; }
     #backend .detail.candidate dt {
       margin: 15px 0 5px 0;
@@ -171,23 +166,5 @@ html {
       padding: 5px 0;
       line-height: 1.8;
       font-size: 16px; }
-  #backend .toolbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 80px;
-    height: 32px; }
-    #backend .toolbar li {
-      display: inline-block;
-      width: 32px;
-      height: 32px; }
-      #backend .toolbar li a {
-        display: block;
-        width: 100%;
-        height: 100%; }
-      #backend .toolbar li.blank {
-        background: #0075ba; }
-      #backend .toolbar li.closed {
-        background: #C09853; }
 
 /*# sourceMappingURL=layout.css.map */

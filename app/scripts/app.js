@@ -3,41 +3,40 @@
  */
 'use strict';
 
-angular.module('bfdf.resources', [
-    'bfdf.resources.candidate'
+angular.module('blog.resources', [
+    'blog.resources.ued'
 ]);
 
-angular.module('bfdf.services', [
+angular.module('blog.services', [
 ]);
 
-angular.module('bfdf.controllers', [
-    'bfdf.controllers.front',
-    'bfdf.controllers.candidate'
+angular.module('blog.controllers', [
+    'blog.controllers.ued'
 ]);
 
-angular.module('bfdf.filters', [
+angular.module('blog.filters', [
 ]);
 
-angular.module('bfdf.directives', [
+angular.module('blog.directives', [
 ]);
 
-angular.module('bfdf.config', [
-    'bfdf.config.routers',
-    'bfdf.config.setting'
+angular.module('blog.config', [
+    'blog.config.routers',
+    'blog.config.setting'
 ]);
 
-angular.module('bfdf', [
+angular.module('blog', [
     'fdf',
-    'bfdf.config',
-    'bfdf.filters',
-    'bfdf.directives',
-    'bfdf.resources',
-    'bfdf.services',
-    'bfdf.controllers'
+    'blog.config',
+    'blog.filters',
+    'blog.directives',
+    'blog.resources',
+    'blog.services',
+    'blog.controllers'
 ]);
 
 angular.element(document).ready(function() {
-    angular.bootstrap(document, ['bfdf']);
+    angular.bootstrap(document, ['blog']);
 });
 
 
