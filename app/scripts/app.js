@@ -18,7 +18,7 @@ angular.module('blog.filters', [
 ]);
 
 angular.module('blog.directives', [
-    'btford.markdown'
+    'hc.marked'
 ]);
 
 angular.module('blog.config', [

@@ -23,6 +23,18 @@
             "summary": "通用代码风格",
             "tags": "HTML, 规范",
             "md": "store/ued/HTML.md"
+        },
+
+        {
+            "id": "UED-3",
+            "title": "TEST 测试",
+            "author": "Colin Li",
+            "avatar": "images/hr-default.png",
+            "createTime": 1417412682618,
+            "type": "ued",
+            "summary": "通用代码风格",
+            "tags": "HTML, 规范",
+            "md": "store/ued/test.md"
         }
 
     ]

@@ -10,11 +10,15 @@
  * Created by mizi on 2014/11/11.
  */
 
-angular.module('blog.config.setting', ['btford.markdown'])
+angular.module('blog.config.setting', ['hc.marked'])
 
-.config(['markdownConverterProvider', function (markdownConverterProvider) {
-    markdownConverterProvider.config({
-        extensions: ['github']
+.config(['markedProvider', function(markedProvider) {
+    markedProvider.setOptions({
+        gfm: true/*,
+        tables: true,
+        highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+        }*/
     });
 }])
 

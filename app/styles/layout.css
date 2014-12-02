@@ -23,6 +23,12 @@ html {
     height: 100%;
     color: #fff; }
   #backend #wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
     height: 100%; }
     #backend #wrapper .backend.view {
       height: 100%; }
@@ -131,6 +137,8 @@ html {
           font-size: 28px;
           color: #c3c3c3;
           text-decoration: none; }
+    #backend #mainer section.right {
+      padding: 10px; }
   #backend .list.content {
     padding: 2px; }
     #backend .list.content dd {
@@ -166,10 +174,5 @@ html {
       padding: 5px 0;
       line-height: 1.8;
       font-size: 16px; }
-  #backend .markdown-body {
-    color: #fdfdfd; }
-  #backend .markdown-body .highlight pre,
-  #backend .markdown-body pre {
-    background: #f58723; }
 
 /*# sourceMappingURL=layout.css.map */
