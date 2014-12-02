@@ -35,6 +35,18 @@
             "summary": "通用代码风格",
             "tags": "HTML, 规范",
             "md": "store/ued/test.md"
+        },
+
+        {
+            "id": "UED-4",
+            "title": "JavaScript最佳实践",
+            "author": "Mizi Lin",
+            "avatar": "images/hr-default.png",
+            "createTime": 1417412682618,
+            "type": "ued",
+            "summary": "避免糟粕和鸡肋，那些年一起踩过的坑，良好的编码习惯，更为优雅的方式",
+            "tags": "HTML, 规范",
+            "md": "store/ued/JS.bp.md"
         }
 
     ]

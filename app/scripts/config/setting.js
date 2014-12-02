@@ -14,11 +14,11 @@ angular.module('blog.config.setting', ['hc.marked'])
 
 .config(['markedProvider', function(markedProvider) {
     markedProvider.setOptions({
-        gfm: true/*,
+        gfm: true,
         tables: true,
         highlight: function (code) {
             return hljs.highlightAuto(code).value;
-        }*/
+        }
     });
 }])
 
