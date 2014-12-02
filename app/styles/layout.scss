@@ -223,4 +223,13 @@ html {
             }
         }
     }
+
+    //markdown 样式修改
+    .markdown-body {
+        color: #fdfdfd;
+    }
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+        background: rgba(245, 135, 35, 1);
+    }
 }

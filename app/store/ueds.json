@@ -10,8 +10,7 @@
             "type": "ued",
             "summary": "ued 分享不在于多分享的内容多么高大尚，而在于态度",
             "tags": "ued, 分享, 内容",
-            "md": "md 内容",
-            "html": "<div>abcdefg</div>"
+            "md": "store/ued/UED-1.md"
         },
 
         {
@@ -23,8 +22,7 @@
             "type": "ued",
             "summary": "通用代码风格",
             "tags": "HTML, 规范",
-            "md": "md 内容",
-            "html": "<div>abcdefg</div>"
+            "md": "store/ued/HTML.md"
         }
 
     ]

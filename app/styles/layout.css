@@ -166,5 +166,10 @@ html {
       padding: 5px 0;
       line-height: 1.8;
       font-size: 16px; }
+  #backend .markdown-body {
+    color: #fdfdfd; }
+  #backend .markdown-body .highlight pre,
+  #backend .markdown-body pre {
+    background: #f58723; }
 
 /*# sourceMappingURL=layout.css.map */

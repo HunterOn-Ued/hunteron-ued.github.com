@@ -9,7 +9,17 @@ angular.module('blog.controllers.ued', [])
         vm.list = res.data;
     });
 
+    return vm;
+}])
 
+.controller('UedDetailCtrl',['app', function(app){
+    var vm = this;
+
+    app.$_Ued.ueds.get({}, function(res){
+        vm.detail = app.find(res.data, function(o, i){
+            return o.id == app.$stateParams.id;
+        });
+    });
     return vm;
 }])
 

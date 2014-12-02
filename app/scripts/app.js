@@ -18,6 +18,7 @@ angular.module('blog.filters', [
 ]);
 
 angular.module('blog.directives', [
+    'btford.markdown'
 ]);
 
 angular.module('blog.config', [

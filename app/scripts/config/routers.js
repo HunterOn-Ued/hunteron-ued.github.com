@@ -58,6 +58,9 @@ angular.module('blog.config.routers', ['ui.router'])
             }
         })
 
+        /**
+         * ued list
+         */
         .state('b.m.ued', {
             url: '^/ued',
             views: {
@@ -67,7 +70,17 @@ angular.module('blog.config.routers', ['ui.router'])
                 },
                 'detail@b.m': {
                     templateUrl: 'views/backend/ued/ued.detail.default.html',
-                    controller: 'UedDetailDefaultCtrl as abc'
+                    controller: 'UedDetailDefaultCtrl as ueds'
+                }
+            }
+        })
+
+        .state('b.m.ued.detail', {
+            url: '^/ued/detail/{id}',
+            views: {
+                'detail@b.m': {
+                    templateUrl: 'views/backend/ued/ued.detail.html',
+                    controller: 'UedDetailCtrl as ued'
                 }
             }
         })
