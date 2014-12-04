@@ -10,7 +10,12 @@
  * Created by mizi on 2014/11/11.
  */
 
-angular.module('blog.config.setting', ['hc.marked'])
+angular.module('blog.config.setting', [
+    // markdown 语法解析
+    'hc.marked',
+    // 语法高亮
+    'hljs'
+])
 
 .config(['markedProvider', function(markedProvider) {
     markedProvider.setOptions({
@@ -21,6 +26,14 @@ angular.module('blog.config.setting', ['hc.marked'])
         }
     });
 }])
+
+.config(function (hljsServiceProvider) {
+    //https://github.com/pc035860/angular-highlightjs
+    hljsServiceProvider.setOptions({
+        // replace tab with 4 spaces
+        tabReplace: '    '
+    });
+})
 
 .run(['app', function (app) {
         app._uri = function(url, type){

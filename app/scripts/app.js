@@ -4,21 +4,22 @@
 'use strict';
 
 angular.module('blog.resources', [
-    'blog.resources.ued'
+    'blog.resources.ued',
+    'blog.resources.example'
 ]);
 
 angular.module('blog.services', [
 ]);
 
 angular.module('blog.controllers', [
-    'blog.controllers.ued'
+    'blog.controllers.ued',
+    'blog.controllers.example'
 ]);
 
 angular.module('blog.filters', [
 ]);
 
 angular.module('blog.directives', [
-    'hc.marked'
 ]);
 
 angular.module('blog.config', [

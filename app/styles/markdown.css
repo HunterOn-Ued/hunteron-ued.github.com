@@ -1,7 +1,8 @@
 .markdown-body {
   line-height: 1.8; }
   .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
-    color: #29c04b; }
+    color: #29c04b;
+    letter-spacing: 1px; }
   .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6,
   .markdown-body ul, .markdown-body ol, .markdown-body pre, .markdown-body p, .markdown-body blockquote {
     margin-bottom: 8px; }
@@ -43,6 +44,7 @@
     border-radius: 3px; }
   .markdown-body blockquote {
     padding: 5px 5px 5px 15px;
+    margin-top: 8px;
     border-left: 5px solid #08326e;
     color: #999988; }
   .markdown-body ul {

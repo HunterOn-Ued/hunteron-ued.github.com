@@ -3,7 +3,7 @@
     "data": [
         {
             "id": "UED-1",
-            "title": "UED 分享大会",
+            "title": "UED分享大会第一季总结",
             "author": "Mizi Lin",
             "avatar": "images/hh-default.png",
             "createTime": 1417492682618,
@@ -27,14 +27,14 @@
 
         {
             "id": "UED-3",
-            "title": "TEST 测试",
-            "author": "Colin Li",
+            "title": "UED第十六次分享",
+            "author": "Mizi",
             "avatar": "images/hr-default.png",
             "createTime": 1417412682618,
             "type": "ued",
-            "summary": "通用代码风格",
-            "tags": "HTML, 规范",
-            "md": "store/ued/test.md"
+            "summary": "UED第十六次分享， mizi主持， 2014.12.04 星期五中午11：00-12：00",
+            "tags": "ued, 分享, ued-16",
+            "md": "store/ued/ued-16.md"
         },
 
         {
@@ -47,6 +47,18 @@
             "summary": "避免糟粕和鸡肋，那些年一起踩过的坑，良好的编码习惯，更为优雅的方式",
             "tags": "HTML, 规范",
             "md": "store/ued/JS.bp.md"
+        },
+
+        {
+            "id": "UED-5",
+            "title": "Angular’s “Controller as” syntax",
+            "author": "Mizi Lin",
+            "avatar": "images/hr-default.png",
+            "createTime": 1417598980387,
+            "type": "ued",
+            "summary": "angualr controller as 使用时的注意点",
+            "tags": "HTML, 规范",
+            "md": "store/ued/controller.as.md"
         }
 
     ]
