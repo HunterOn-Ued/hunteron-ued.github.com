@@ -59,6 +59,18 @@
             "summary": "angualr controller as 使用时的注意点",
             "tags": "HTML, 规范",
             "md": "store/ued/controller.as.md"
+        },
+
+        {
+            "id": "UED-6",
+            "title": "Why no requireJS?",
+            "author": "Mizi Lin",
+            "avatar": "images/hr-default.png",
+            "createTime": 1417598980387,
+            "type": "fdf",
+            "summary": "angualr controller as 使用时的注意点",
+            "tags": "javascript, fdf",
+            "md": "store/ued/no.requirejs.md"
         }
 
     ]

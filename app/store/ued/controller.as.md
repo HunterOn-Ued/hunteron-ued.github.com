@@ -163,6 +163,52 @@ app.controller('MainCtrl', function ($scope) {
 &lt;div ng-controller="MainCtrl as main">
 ```
 
-*
+* directive
+
+```javascript
+app.directive('myDirective', function () {
+  return {
+    restrict: 'EA',
+    replace: true,
+    scope: true,
+    template: [].join(''),
+    controllerAs: '', // woohoo, nice and easy!
+    controller: function () {}, // we'll instantiate this controller "as" the above name
+    link: function () {}
+  };
+});
+```
+
+* router
+
+```javascript
+app.config(function ($routeProvider) {
+  $routeProvider
+  .when('/', {
+    templateUrl: 'views/main.html',
+    controllerAs: '',
+    controller: ''
+  })
+  .otherwise({
+    redirectTo: '/'
+  });
+});
+```
+
+* ui-router
+
+```javascript
+//候选人页
+.state('b.m.candidate', {
+    url: '^/candidate',
+    views: {
+        'list@b.m': {
+            templateUrl: '/views/backend/candidate/candidate.list.html',
+            controller: 'CandidateListCtrl as cdds'
+        }
+    }
+})
+```
+
 
 
