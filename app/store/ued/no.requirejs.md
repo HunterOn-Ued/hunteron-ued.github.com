@@ -71,4 +71,162 @@ ng 并不关心各个模块申明的顺序
 
 ### 麻烦
 
-http://www.html-js.com/article/2126
+RequireJS是一个好东西，但是如果和AngularJS一起使用，就会出现问题。核心问题在于Angular需要在DOM完全加载之后开始运行，它并不想要玩异步游戏。由于RequireJS中一切都是异步的(AMD即异步模块定义)，你很难将二者很好的结合起来。
+
+由于脚本载入是异步的，所有的ng-app属性现在完全不可用了。你不可以使用它来指明Angular应用。
+
+另一个讨厌的事情是app模块。为了传递它你必须使用疯狂的环形依赖。
+
+下面我们来使用RequireJS进行文件架构：
+
+app partials home.html controllers index.js module.js homeController.js services index.js modules.js productsDataSource.js app.js main.js routes.js
+
+我们先从main.js这个文件开始，它在其中配置了所有的库文件信息，并且对于不遵循AMD标准的模块进行了shim设置。该文件的目的是确保所有的js文件都能通过正确的路径载入。
+
+```javascript
+require.config({
+  paths: {
+    'jquery': 'vendor/jquery/jquery',
+    'angular': 'vendor/angular/angular',
+    'kendo': 'vendor/kendo/kendo',
+    'angular-kendo': 'vendor/angular-kendo',
+    'app': 'app'
+  },
+  shim: {
+    // 确保kendo在angular-kendo之前载入
+    'angular-kendo': ['kendo'],
+    // make sure that
+    'app': {
+        deps: ['jquery', 'angular', 'kendo', 'angular-kendo']
+    }
+  }
+});
+
+define(['routes'], function () {
+
+  // 使用bootstrap方法启动Angular应用
+  angular.bootstrap(document, ['app']);
+
+});
+```
+
+在angular.bootstrap方法运行之前，所有的文件已经载入完毕了。
+
+这些依赖工作由RequireJS进行解析。
+
+注意到上面的代码中define函数对route.js文件发出了请求。
+
+RequireJS接着就会在执行angular.bootstrap方法之前载入该文件。
+
+```javascript
+// routes.js
+
+define([
+  './app'
+], function (app) {
+
+  // app是Angular应用对象
+  return app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+      .when('/home',
+        {
+          templateUrl: '/app/partials/home.html',
+          controller: 'homeController'
+        })
+      .otherwise(
+        {
+          redirectTo: '/home'
+        });
+
+  }]);
+});
+```
+
+route.js文件声明app.js为依赖项。
+
+app.js文件创建了一个Angular应用对象，并且将它暴露给外部以便于路由可以获取它。
+
+```javascript
+// app.js
+
+define([
+  './controllers/index',
+  './services/index'
+], function (controllers, index) {
+
+  // 返回真正的Angular应用对象，在声明时指明了依赖的项目
+  return angular.module('app', [
+    'ngRoute',
+    'kendo.directives',
+    'app.controllers',
+    'app.services'
+  ]);
+});
+```
+
+app.js文件创建了模型并且注入了所有所需要的依赖项。
+
+其中包含ngRoute服务，Angular Kendo UI 指定以及其他两个模块，这两个模块都在文件的顶部定义。
+
+我们首先来看看”controllers/index.js”文件。
+
+```javascript
+// controllers/index.js
+
+define([
+  './homeController'
+], function () {
+
+});
+```
+
+```
+// controllers/homeController.js
+
+define([
+  './module'
+], function (module) {
+
+  module.controller('homeController', ['$scope', '$productsDataSource',
+    function ($scope, $productsDataSource) {
+      $scope.title = 'Home';
+      $scope.productsDataSource = $productsDataSource;
+
+      $scope.listViewTemplate = '<p>#: ShipCity #</p>';
+    };
+  );
+
+});
+```
+
+```
+// controllers/module.js
+
+define([
+], function () {
+
+  return angular.module('app.controllers', []);
+
+});
+```
+
+我们现在来回顾一下从一开始到现在究竟发生了些什么：
+
+```
+“main.js” requires “routes.js”
+    “routes.js” requires “app.js”
+        “app.js” requires “controllers/index.js”
+            “controllers/index.js” requires 所有的控制器
+                所有的控制器 require “module.js”
+                    “module.js” 创建了 “app.controllers” 模块
+```
+
+这有点像一颗过于庞大的依赖树，但是它的可扩展性确实很好。如果你想添加一个新的控制器，你只需要添加”controllers/nameController.js”文件，并在”controllers/index.js”文件中添加相同的依赖项即可。
+
+服务的运作方式和控制器类似。app.js会require services/index.js文件，它require了所有的服务。所有的服务同时会require services/module.js文件，它能够简单的创建并提供app.services模块。
+
+现在回到app.js文件，所有的项目都在其中被加载并传递给我们创建的Angular应用模块。最后一件发生的事情是main.js文件中所发生的angular.bootstrap。简单来说，我们第一眼看到的代码其实在最后才会执行。
+
+这实在是有点难以理解。
+
+RequireJS会在应用运行之前加载所有的代码。这意味着我们并没有实现代码的延迟加载。
