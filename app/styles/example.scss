@@ -1,0 +1,49 @@
+.ex-page {
+
+    .fdf-btn {
+        position: relative;
+        display: inline-block;
+        padding: 6px;
+        min-width: 80px;
+        background-color: rgba(33, 150, 243, .9);
+        border: 0; outline: 0; border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.26);
+        color: #fff; font-size: 14px;
+        white-space: nowrap; text-align: center;
+
+        &a {
+            text-decoration: none;
+        }
+
+        &:hover {
+            border-radius: 1px;
+            background-color: rgba(33, 150, 243, .95);
+            box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .loading {
+            display: none;
+        }
+
+        &.loading {
+            background-color: #1fad83;
+            cursor: progress;
+
+            > span {
+                display: none;
+            }
+
+            > .loading {
+                display: block;
+            }
+        }
+
+        &.disabled {
+            background: #adadad;
+            cursor: not-allowed;
+        }
+    }
+
+}

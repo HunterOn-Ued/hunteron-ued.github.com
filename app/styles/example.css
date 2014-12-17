@@ -1,0 +1,36 @@
+.ex-page .fdf-btn {
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  min-width: 80px;
+  background-color: rgba(33, 150, 243, 0.9);
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.26);
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center; }
+  .ex-page .fdf-btna {
+    text-decoration: none; }
+  .ex-page .fdf-btn:hover {
+    border-radius: 1px;
+    background-color: rgba(33, 150, 243, 0.95);
+    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    cursor: pointer; }
+  .ex-page .fdf-btn .loading {
+    display: none; }
+  .ex-page .fdf-btn.loading {
+    background-color: #1fad83;
+    cursor: progress; }
+    .ex-page .fdf-btn.loading > span {
+      display: none; }
+    .ex-page .fdf-btn.loading > .loading {
+      display: block; }
+  .ex-page .fdf-btn.disabled {
+    background: #adadad;
+    cursor: not-allowed; }
+
+/*# sourceMappingURL=example.css.map */

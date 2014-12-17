@@ -8,7 +8,7 @@ angular.module('blog.resources.ued', [])
 
 .service('$_Ued', ['$resource', function ($resource) {
     return {
-        ueds: $resource('store/ueds.json')
+        list: $resource('store/ueds.json')
     }
 }])
 

@@ -1,0 +1,20 @@
+<div class="content list {{module}}">
+    <dl>
+        <dd ng-repeat="item in Ds.list">
+            <ul>
+                <li class="cols-1 avatar">
+                    <img ng-src="{{item.avatar}}" width="32px" />
+                </li>
+                <li class="cols-2">
+                    <div class="f12px">{{item.id}}</div>
+                    <div class="f16px">
+                        <a ui-sref="b.m.{{module}}.detail({id:item.id})">{{item.title}}</a>
+                    </div>
+                    <div>
+                        <p>{{item.summary}}</p>
+                    </div>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>

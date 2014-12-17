@@ -5,7 +5,9 @@ angular.module('blog.controllers.ued', [])
 .controller('UedCtrl', ['app', function(app){
     var vm = this;
 
-    app.$_Ued.ueds.get({}, function(res){
+    app.$rootScope.module = 'ued';
+
+    app.$_Ued.list.get({}, function(res){
         vm.list = res.data;
     });
 
@@ -15,7 +17,7 @@ angular.module('blog.controllers.ued', [])
 .controller('UedDetailCtrl',['app', function(app){
     var vm = this;
 
-    app.$_Ued.ueds.get({}, function(res){
+    app.$_Ued.list.get({}, function(res){
         vm.detail = app.find(res.data, function(o, i){
             return o.id == app.$stateParams.id;
         });
@@ -26,7 +28,7 @@ angular.module('blog.controllers.ued', [])
 .controller('UedDetailDefaultCtrl',['app', function(app){
     var vm = this;
 
-    app.$_Ued.ueds.get({}, function(res){
+    app.$_Ued.list.get({}, function(res){
         vm.list = res.data;
     });
 

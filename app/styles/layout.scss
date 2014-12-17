@@ -110,7 +110,7 @@ html {
         }
 
         section.right {
-            position: absolute; top: 0; left: calc(#{$leftWidth} + #{$centerWidth}); z-index: 10;
+            position: absolute; top: 0; left: calc(#{$leftWidth} + #{$centerWidth}); right: 0; z-index: 10;
             box-sizing: border-box;
             overflow-y: scroll;
             min-width: $rightWidth; height: 100%;

@@ -65,12 +65,12 @@ angular.module('blog.config.routers', ['ui.router'])
             url: '^/ued',
             views: {
                 'list@b.m': {
-                    templateUrl: 'views/backend/ued/ued.list.html',
-                    controller: 'UedCtrl as ueds'
+                    templateUrl: 'views/backend/list.html',
+                    controller: 'UedCtrl as Ds'
                 },
                 'detail@b.m': {
-                    templateUrl: 'views/backend/ued/ued.detail.default.html',
-                    controller: 'UedDetailDefaultCtrl as ueds'
+                    templateUrl: 'views/backend/detail.default.html',
+                    controller: 'UedDetailDefaultCtrl as Dd'
                 }
             }
         })
@@ -79,8 +79,35 @@ angular.module('blog.config.routers', ['ui.router'])
             url: '^/ued/detail/{id}',
             views: {
                 'detail@b.m': {
-                    templateUrl: 'views/backend/ued/ued.detail.html',
-                    controller: 'UedDetailCtrl as ued'
+                    templateUrl: 'views/backend/detail.html',
+                    controller: 'UedDetailCtrl as Dt'
+                }
+            }
+        })
+
+        /**
+         * ued example
+         */
+        .state('b.m.ex', {
+            url: '^/ex',
+            views: {
+                'list@b.m': {
+                    templateUrl: 'views/backend/list.html',
+                    controller: 'ExCtrl as Ds'
+                },
+                'detail@b.m': {
+                    templateUrl: 'views/backend/detail.default.html',
+                    controller: 'ExDetailDefaultCtrl as Dd'
+                }
+            }
+        })
+
+        .state('b.m.ex.detail', {
+            url: '^/ex/detail/{id}',
+            views: {
+                'detail@b.m': {
+                    templateUrl: 'views/backend/example/ex.detail.html',
+                    controller: 'ExDetailCtrl as Dt'
                 }
             }
         })

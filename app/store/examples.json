@@ -1,0 +1,17 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": "EX-1",
+            "title": "按钮样式",
+            "author": "Mizi Lin",
+            "avatar": "images/hh-default.png",
+            "createTime": 1417492682618,
+            "type": "css",
+            "summary": "ued 分享不在于多分享的内容多么高大尚，而在于态度",
+            "tags": "css, demo",
+            "md": "store/example/EX-1.html"
+        }
+    ]
+}
+
