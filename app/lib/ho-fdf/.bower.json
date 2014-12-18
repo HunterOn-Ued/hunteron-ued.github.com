@@ -1,6 +1,6 @@
 {
   "name": "ho-fdf",
-  "version": "1.1.9",
+  "version": "1.1.14",
   "authors": [
     "Mizi <mizi.lin@hunteron.com>"
   ],
@@ -17,9 +17,10 @@
     "angular-route": "1.2.26",
     "jquery": "1.11.1",
     "underscore": "~1.7.0",
-    "angular-ui-router": "0.2.11",
+    "angular-ui-router": "0.2.13",
     "angular-bootstrap": "0.12.0",
-    "angular-ui": "0.4.0"
+    "angular-ui": "0.4.0",
+    "notify.js": "~1.2.3"
   },
   "keywords": [
     "hunteron",
@@ -35,13 +36,13 @@
     "test",
     "tests"
   ],
-  "_release": "1.1.9",
+  "_release": "1.1.14",
   "_resolution": {
     "type": "version",
-    "tag": "1.1.9",
-    "commit": "9688db28b450342292312cfab514c2717c594277"
+    "tag": "1.1.14",
+    "commit": "ac783e165d7f7e6a45d7efb34fa5ab6cd658e5b6"
   },
   "_source": "git://github.com/HunterOn-Ued/ho-fdf.git",
-  "_target": "~1.1.8",
+  "_target": "~1.1.14",
   "_originalSource": "ho-fdf"
 }
